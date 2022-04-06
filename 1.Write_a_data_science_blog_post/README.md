@@ -1,6 +1,6 @@
 # 1. Data Science Blog Post
 
-You can read my Medium blog post [here]()
+You can read my Medium blog post [here](https://medium.com/@hoangminhduong93/an-investigation-about-stack-overflow-survey-data-2021-5cac64f2568a)
 
 ## Libraries
 
