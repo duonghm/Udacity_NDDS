@@ -14,6 +14,21 @@ plotly==5.7.0
 Flask==2.1.1
 ```
 
+## Project Structures
+
+```
+|- app/
+  |- run.py: The flask webapp
+|- data/
+  |- process_data.py: ETL module. It is used to process data and store cleaned data into sqlite database 
+  |- disaster_messages.csv: Input data
+  |- disaster_cateogires.csv: Input data
+  |- DisasterResponse.db: Processed data 
+|- models/
+  |- train_classifier.py: 
+  |- classifier.pkl: Trained model
+```
+
 ## Instructions
 
 1. Run the following commands in the project's root directory to set up your database and model.

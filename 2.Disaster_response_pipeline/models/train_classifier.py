@@ -16,6 +16,7 @@ nltk.download(['omw-1.4', 'punkt', 'wordnet'])
 
 
 def load_data(database_filepath):
+    """Load data from sqlite database"""
     engine = create_engine(f'sqlite:///{database_filepath}')
     df = pd.read_sql_table('disaster_messages', con=engine)
     X = df['message']
@@ -25,6 +26,7 @@ def load_data(database_filepath):
 
 
 def tokenize(text):
+    """Tokenize and lemmatize text"""
     tokens = nltk.word_tokenize(text)
     lemmer = nltk.stem.wordnet.WordNetLemmatizer()
     lemmed = [lemmer.lemmatize(t).lower().strip() for t in tokens]
@@ -32,6 +34,7 @@ def tokenize(text):
 
 
 def build_model():
+    """Create data processing, model pipeline"""
     pipeline = Pipeline([
         ('vectorizer', CountVectorizer(tokenizer=tokenize)),
         ('tfidf', TfidfTransformer()),
@@ -46,6 +49,7 @@ def build_model():
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
+    """Show the classification result for each output categories"""
     Y_pred = model.predict(X_test)
     for i, col in enumerate(category_names):
         print(i, col)
@@ -53,6 +57,7 @@ def evaluate_model(model, X_test, Y_test, category_names):
 
 
 def save_model(model, model_filepath):
+    """Export model into pickle object"""
     pickle.dump(model, open(model_filepath, 'wb'))
 
 
