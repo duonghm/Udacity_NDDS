@@ -48,3 +48,5 @@ python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl
 
 4. Go to http://0.0.0.0:3000
 
+## Licensing, Authors, Acknowledgements
+Credit to [Udacity](https://www.udacity.com/) Instructors for providing the guidance and data

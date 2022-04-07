@@ -21,7 +21,7 @@ def clean_data(df):
         # set each value to be the last character of the string
         categories[column] = categories[column].apply(lambda x: x[-1])
         # convert column from string to numeric
-        categories[column] = categories[column].astype('int')
+        categories[column] = categories[column].apply(lambda x: 0 if x == '0' else 1).astype('int')
     df = df.drop(columns=['categories'])
     df = pd.concat([df, categories], axis=1)
     df = df.drop_duplicates()
@@ -31,7 +31,7 @@ def clean_data(df):
 def save_data(df, database_filename):
     """Load: Save cleaned data into sqlite database"""
     engine = create_engine(f'sqlite:///{database_filename}')
-    df.to_sql('disaster_messages', engine, index=False)
+    df.to_sql('disaster_messages', engine, index=False, if_exists='replace')
 
 
 def main():
