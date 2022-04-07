@@ -25,7 +25,7 @@ Flask==2.1.1
   |- disaster_cateogires.csv: Input data
   |- DisasterResponse.db: Processed data 
 |- models/
-  |- train_classifier.py: 
+  |- train_classifier.py: Load data, train classifier and save into pickle model
   |- classifier.pkl: Trained model
 ```
 
