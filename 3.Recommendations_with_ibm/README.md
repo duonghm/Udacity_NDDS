@@ -1,4 +1,4 @@
-# 2. Recommendations with IBM
+# 3. Recommendations with IBM
 
 ## Introduction
 In the Project Workspace, I used my skills to analyze the interactions that users have with articles on the IBM Watson Studio platform, and make recommendations to them about new articles.
@@ -14,16 +14,17 @@ matplotlib==3.4.3
 ## Project Structures
 
 ```
-|- app/
-  |- run.py: The flask webapp
+|- Recommendations_with_IBM.ipynb  # Result notebook
+|- Recommendations_with_IBM.html  # Result notebook in html 
+|- top_5.p  # for test
+|- top_10.p  # for test
+|- top_20.p  # for test
+|- user_item_matrix.p  # for test
+|- project_tests.py  # test utils
 |- data/
-  |- process_data.py: ETL module. It is used to process data and store cleaned data into sqlite database 
-  |- disaster_messages.csv: Input data
-  |- disaster_cateogires.csv: Input data
-  |- DisasterResponse.db: Processed data 
-|- models/
-  |- train_classifier.py: Load data, train classifier and save into pickle model
-  |- classifier.pkl: Trained model
+  |- articles_community.csv  # input data
+  |- user-item-interactions.csv  # input data
+
 ```
 
 ## Licensing, Authors, Acknowledgements
