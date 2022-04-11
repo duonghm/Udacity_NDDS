@@ -15677,7 +15677,7 @@ Your top_20 looks like the solution list! Nice job.
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>C:\Users\DUONGHM\AppData\Local\Temp/ipykernel_7572/3646749332.py:17: SettingWithCopyWarning: 
+<pre>C:\Users\DUONGHM\AppData\Local\Temp/ipykernel_248/3646749332.py:17: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -15760,7 +15760,9 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 <span class="sd">    </span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="c1"># compute similarity of each user to the provided user</span>
-    <span class="n">df_score</span> <span class="o">=</span> <span class="n">user_item</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">user_item</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">user_item</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">df_score</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">transpose</span><span class="p">())</span>
+    <span class="n">df_score</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df_score</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">user_item</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">user_item</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>    
     <span class="c1"># sort by similarity</span>
     <span class="n">most_similar_users</span> <span class="o">=</span> <span class="n">df_score</span><span class="p">[</span><span class="n">user_id</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="c1"># create list of just the ids</span>
@@ -16038,7 +16040,9 @@ The 3 most similar users to user 46 are: [4201, 3782, 23]
 <span class="sd">     </span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="c1"># Your code here</span>
-    <span class="n">df_score</span> <span class="o">=</span> <span class="n">user_item</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">user_item</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">user_item</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">df_score</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">transpose</span><span class="p">())</span>
+    <span class="n">df_score</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df_score</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">user_item</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">user_item</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
     <span class="n">most_similar_users</span> <span class="o">=</span> <span class="n">df_score</span><span class="p">[</span><span class="n">user_id</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="n">user_interacts</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;user_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
     <span class="n">neighbors_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">most_similar_users</span><span class="p">,</span> <span class="n">user_interacts</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>    
@@ -16752,7 +16756,7 @@ The top 10 recommendations for user 20 are the following article names:
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>C:\Users\DUONGHM\AppData\Local\Temp/ipykernel_7572/3646749332.py:17: SettingWithCopyWarning: 
+<pre>C:\Users\DUONGHM\AppData\Local\Temp/ipykernel_248/3646749332.py:17: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
