@@ -16224,7 +16224,10 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Provide your response here.</strong></p>
+<ul>
+<li>When a new user comes, it is reasonable to recommend the most viewed articles, which is calculated by <code>get_top_articles</code>. We have no detail information about the new user, statistically, the user may have high interst in the most popular articles.</li>
+<li>To make a better recommendations for new user, we could make some more Rank-Based Recommendations for each cluster of user. For example, from user IP, we can extract user's country and then make Rank Based Recommendations for each country. An another way to improve Rank Based Recommendations is just used recent data (e.g 3 days, 1 week) to make recommendations. </li>
+</ul>
 
 </div>
 </div>
@@ -16623,7 +16626,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Provide your response here.</strong></p>
+<p>The data has no missing values, so we can simply use SVD of numpy. In the lesson, the missing values are existed, so we need to use FunkSVD</p>
 
 </div>
 </div>
