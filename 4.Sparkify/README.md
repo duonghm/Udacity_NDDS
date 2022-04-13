@@ -1,6 +1,6 @@
 # 1. Data Science Blog Post
 
-You can read my Medium blog post [here]()
+You can read my Medium blog post [here](https://medium.com/@hoangminhduong93/sparkify-churn-prediction-b8b6ef88ab09)
 
 ## Libraries
 Python 3.9.7
