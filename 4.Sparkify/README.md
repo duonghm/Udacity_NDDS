@@ -1,4 +1,4 @@
-# 1. Data Science Blog Post
+# 1. Sparkify
 
 You can read my Medium blog post [here](https://medium.com/@hoangminhduong93/sparkify-churn-prediction-b8b6ef88ab09)
 
