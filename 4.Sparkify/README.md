@@ -1,6 +1,6 @@
-# 1. Sparkify
+# 4. Sparkify
 
-You can read my Medium blog post [here](https://medium.com/@hoangminhduong93/sparkify-churn-prediction-b8b6ef88ab09)
+You can read my Medium blog post [here](https://medium.com/@hoangminhduong93/sparkify-churn-prediction-b1696aa19fa)
 
 ## Libraries
 Python 3.9.7
